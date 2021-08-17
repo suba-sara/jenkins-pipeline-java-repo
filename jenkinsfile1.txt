@@ -30,7 +30,7 @@ pipeline {
         }
 	stage('deploy') {
 		steps {
-			echo 'Deploying java package....'
+			echo 'Deploying java package.....'
 		}
             }
         }
