@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+    	stage('Input') {
+ 			options {
+ 				timeout(time: 1, unit: 'MINUTES')
+ 			}
+ 			steps {
+ 				input('Do you want to proceed?')
+            		}
+        	}
         stage('Build') {
             steps {
                 echo 'Building java source code..'
@@ -8,14 +16,16 @@ pipeline {
 		java jenkins
 		'''
 		 //echo 'Fail!'; exit 1
+		 }
+		}
 		 stage('Input') {
- 	options {
- 	timeout(time: 1, unit: 'MINUTES')
- 	}
- 	steps {
- 	input('Do you want to proceed?')
-            }
-        }
+ 			options {
+ 				timeout(time: 1, unit: 'MINUTES')
+ 			}
+ 			steps {
+ 				input('Do you want to proceed?')
+            		}
+        	}
         stage('Test') {
             steps {
                 echo 'Testing java source code'
