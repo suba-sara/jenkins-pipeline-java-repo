@@ -4,7 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building java source code..'
-		build 'jenkins.java'
+		sh '''javac jenkins.java
+		java jenkins
+		'''
             }
         }
         stage('Test') {
