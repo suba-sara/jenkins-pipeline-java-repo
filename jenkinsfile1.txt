@@ -7,7 +7,7 @@ pipeline {
 		sh '''javac jenkins.java
 		java jenkins
 		'''
-		 echo 'Fail!'; exit 1
+		 //echo 'Fail!'; exit 1
             }
         }
         stage('Test') {
